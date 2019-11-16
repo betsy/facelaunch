@@ -47,3 +47,12 @@ $('.go, .popup').on('click', function(){
 	setTimeout(outOfTime, time_remaining*1000);
 });
 
+$('.exit, .popup').on('click', function(){
+	window.location.href="https://rehack.co/";
+});
+
+
+$('.addTime, .popup').on('click', function(){
+	$('#initial').css('display', 'block');
+	$('#timeup').css('visibility', 'hidden');
+});
