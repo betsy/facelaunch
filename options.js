@@ -22,6 +22,40 @@ function save_options() {
 }
 
 
+
+function save_website() {
+  var website = document.getElementById('siteName').value;
+  document.getElementById('siteName').value = "";
+  chrome.storage.sync.set({[website]: 0});
+}
+
+function show_sites() { 
+  chrome.storage.sync.get(null, function(items) {
+    var allKeys = Object.keys(items);  
+    console.log(allKeys);
+    
+    var table = document.getElementById("siteList");
+
+    var i;
+    for (i = 0; i < allKeys.length; i++) {
+      var row = table.insertRow(i);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerHTML = allKeys[i];
+    }
+  });
+}
+
+function remove_website() {
+  chrome.storage.sync.remove(website);
+}
+
+function update_table() {
+  save_website();
+  show_sites();
+}
+
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
@@ -35,14 +69,6 @@ function restore_options() {
   });
 }
 
-function save_website(website) {
-  chrome.storage.sync.set({website: 0});
-}
 
-function remove_website(website) {
-  chrome.storage.sync.remove(website);
-}
-
-document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
-    save_options);
+document.addEventListener('DOMContentLoaded', show_sites);
+document.getElementById('addButton').addEventListener('click', save_website);
