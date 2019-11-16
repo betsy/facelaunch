@@ -25,7 +25,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://en.wikipedia.org/*"],
+      "matches": ["<all_urls>"],
       "js": ["jquery-3.4.1.min.js", "enter-time.js"],
       "run_at": "document_end"
     }

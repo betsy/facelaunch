@@ -1,0 +1,110 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<style>
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.popup-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  visibility: hidden;
+  position: absolute;
+  padding: 2em;
+  font-family: Roboto;
+  font-style: light;
+  background: #ffffff;
+  top: 5%;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  background-color: #75B3C7;
+  color: #ffffff;
+}
+
+.popup-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3px;
+  margin: .20rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight:bold;
+  background: rgb(10,10,80);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;  
+}
+
+button:hover {
+  border: 1px solid #666666;
+  border-radius: 4px;
+  background: #666666;
+  color: #ffffff;
+  padding: 12px 20px;
+}
+
+h2 {
+  font-size: 32px;
+}
+input {
+  padding: 12px 20px;
+  margin: 8px auto;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: light;
+  font-size: 24px;
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+
+.min-text {
+  font-size:24px;
+}
+
+</style>
+</head>
+<div class="overlay">
+<div class="popup-overlay active">
+<!--Creates the popup content-->
+ <div class="popup-content active">
+    <h2>How much time would you like to spend here?</h2>
+      <input id='input-minutes' type="number"> <span> <p class="min-text"> minutes. </p>
+<br><br>
+   <!--popup's close button-->
+    <button class="go">Let's go</button>
+</div>
+</div>
+</div>
+<script>
+$(".go, .popup").on("click", function(){
+$(".popup-overlay, .popup-content").removeClass("active");
+$(".popup-overlay, .popup-content").css("visibility", "hidden");
+});
+</script>
+</html>
