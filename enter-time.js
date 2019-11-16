@@ -1,7 +1,6 @@
 
 
 var url = window.location.href;
-var matched = false;
 chrome.storage.sync.get(url, function(items) {
 	console.log(items);
 	if(jQuery.isEmptyObject(items)) return;
@@ -33,6 +32,15 @@ chrome.storage.sync.get(url, function(items) {
 		window.location.href="https://rehack.co/";
 	});
 
+	$('.snooze, .popup').on('click', function(){
+		$('.popup-overlay, .popup-content').removeClass('active');
+		$('.popup-overlay, .popup-content').css('visibility', 'hidden');
+		$('.overlay').css('visibility', 'hidden');
+		$('#initial').css('display', 'block');
+		$('#timeup').css('visibility', 'hidden');
+		time_remaining = 5;
+		setTimeout(outOfTime, time_remaining*1000);
+	});
 
 	$('.addTime, .popup').on('click', function(){
 		$('#initial').css('display', 'block');
