@@ -31,7 +31,7 @@ chrome.storage.sync.get(null, function(items) {
 		$('#initial').css('display', 'block');
 		$('#timeup').css('visibility', 'hidden');
 		time_remaining = $('#input-minutes').val();
-		setTimeout(outOfTime, time_remaining*60000);
+		setTimeout(outOfTime, time_remaining*1000);
 	});
 
 	$('.exit, .popup').on('click', function(){
@@ -45,7 +45,7 @@ chrome.storage.sync.get(null, function(items) {
 		$('#initial').css('display', 'block');
 		$('#timeup').css('visibility', 'hidden');
 		time_remaining = 5;
-		setTimeout(outOfTime, time_remaining*60000);
+		setTimeout(outOfTime, time_remaining*1000);
 	});
 
 	$('.addTime, .popup').on('click', function(){
