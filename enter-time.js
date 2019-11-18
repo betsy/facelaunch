@@ -4,7 +4,7 @@ var url = window.location.href;
 chrome.storage.sync.get(null, function(items) {
 	console.log(items);
 	if(jQuery.isEmptyObject(items)) return;
-	var allKeys = Object.keys(items); 
+	var allKeys = Object.keys(items);
 	var i;
     for (i = 0; i < allKeys.length; i++) {
     	console.log(allKeys[i]);
@@ -31,11 +31,11 @@ chrome.storage.sync.get(null, function(items) {
 		$('#initial').css('display', 'block');
 		$('#timeup').css('visibility', 'hidden');
 		time_remaining = $('#input-minutes').val();
-		setTimeout(outOfTime, time_remaining*1000);
+		setTimeout(outOfTime, time_remaining*60000);
 	});
 
 	$('.exit, .popup').on('click', function(){
-		window.location.href="https://rehack.co/";
+		window.location.href="https://en.wikipedia.org/wiki/Special:Random";
 	});
 
 	$('.snooze, .popup').on('click', function(){
@@ -45,7 +45,7 @@ chrome.storage.sync.get(null, function(items) {
 		$('#initial').css('display', 'block');
 		$('#timeup').css('visibility', 'hidden');
 		time_remaining = 5;
-		setTimeout(outOfTime, time_remaining*1000);
+		setTimeout(outOfTime, time_remaining*60000);
 	});
 
 	$('.addTime, .popup').on('click', function(){
