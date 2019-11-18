@@ -2,20 +2,20 @@
 <html>
 <head>
   <title>FaceLaunch: Settings</title>
-
     <link rel="stylesheet" href="css/stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class = "add-sub-element">
+  <a class = "add-sub-label"> Add Site: </a> <input type="text" id="siteName" value="" class = "add-sub-field">
+  <button id = 'addButton' class = "add-sub-button">Submit</button>
 
-Add Site: <input type="text" id="siteName" value="" class = "add-sub-field">
-<button id = 'addButton' class = "add-sub-button">Submit</button>
+  <table id = 'siteList' style="table-layout:fixed"></table>
 
-<table id = 'siteList' style="table-layout:fixed"></table>
+  <a class = "add-sub-label"> Remove Site: </a> <input type="text" id="removeSiteName" class = "add-sub-field" value="">
+  <button id = 'removeButton' class = "add-sub-button">Submit</button>
 
-Remove Site: <input type="text" id="removeSiteName" class = "add-sub-field" value="">
-<button id = 'removeButton' class = "add-sub-button">Submit</button>
-
-<script src="options.js"></script>
+  <script src="options.js"></script>
+</div>
 </body>
 </html>

@@ -8,14 +8,15 @@ function save_website() {
   var website = document.getElementById('siteName').value;
   document.getElementById('siteName').value = "";
   chrome.storage.sync.set({[website]: 0});
+  document.location.reload()
 }
 
-function show_sites() { 
+function show_sites() {
   chrome.storage.sync.get(null, function(items) {
-    var allKeys = Object.keys(items);  
+    var allKeys = Object.keys(items);
 
     var table = document.getElementById("siteList");
-    
+
     var i;
     for (i = 0; i < allKeys.length; i++) {
       var row = table.insertRow(i);
@@ -30,6 +31,7 @@ function remove_website() {
   var website = document.getElementById('removeSiteName').value;
   document.getElementById('removeSiteName').value = "";
   chrome.storage.sync.remove([website])
+  document.location.reload()
 }
 
 document.addEventListener('DOMContentLoaded', show_sites);
