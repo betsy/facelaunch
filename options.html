@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head><title>FaceLaunch: Settings</title></head>
+<head>
+  <title>FaceLaunch: Settings</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+</head>
 <body>
 
-Add Site: <input type="text" id="siteName" value="">
-<button id = 'addButton'>Submit</button>
+Add Site: <input type="text" id="siteName" value="" class = "add-sub-field">
+<button id = 'addButton' class = "add-sub-button">Submit</button>
 
 <table id = 'siteList' style="table-layout:fixed"></table>
 
-Remove Site: <input type="text" id="removeSiteName" value="">
-<button id = 'removeButton'>Submit</button>
+Remove Site: <input type="text" id="removeSiteName" class = "add-sub-field" value="">
+<button id = 'removeButton' class = "add-sub-button">Submit</button>
 
 <script src="options.js"></script>
 </body>
